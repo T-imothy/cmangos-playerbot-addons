@@ -79,7 +79,7 @@ Additional information about the enhanced controls and modifications is included
 - `CMANGOS-BOT-ENHANCED-README.txt`
 - `CMANGOS-BOT-MANAGER-README.txt`
 - `WOTLK-PORT-NOTES.txt`
-- `MANTECH-README.txt`
+- `Addon-Changes.txt`
 
 ## Compatibility
 
