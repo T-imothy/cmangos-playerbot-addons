@@ -1,0 +1,40 @@
+CMaNGOS BOT MANAGER - WOTLK PORT
+Version 8.6.10-WotLK.5
+
+This build ports the current TBC parity build to WotLK 3.3.5a while keeping
+the full current ManTech feature set:
+- Bot Bar / Manager / Advanced Command Center / Help
+- live party/raid CLASS and CHARACTER dropdowns
+- immediate Character maintenance tools
+- ALT + left-click individual bot management
+- party message suppression under Advanced -> Utility
+- all current group, role, formation, target, loot, RPG and mana controls
+
+WotLK-specific additions:
+- Death Knight is recognized as DEATHKNIGHT.
+- Blood, Frost and Unholy class controls are available.
+- DK-specific Frost AOE, Unholy AOE, bdps and pull controls are included.
+- Interface version is 30300.
+
+The WotLK command transport keeps SendAddonMessage for bot addon/whisper
+communication, matching the existing working WotLK addon behavior.
+
+WotLK Help now documents:
+- Arena and Eye of the Storm behavior
+- Isle of Conquest support
+- Death Knight class controls
+- core/automatic WotLK glyph-management behavior
+
+WotLK.3 compatibility fixes:
+- ChatFrame_OnEvent wrapper now preserves WotLK's (self, event, ...) signature and full chat payload.
+- Party-message suppression no longer passes nil chat messages into Blizzard's ChatFrame code.
+- Individual Bot Manager tab colors now use Button:GetFontString():SetTextColor(), compatible with 3.3.5.
+- Button texture coloring is nil-safe.
+
+WotLK.4 compatibility fix:
+- Corrected UIDropDownMenu_SetWidth argument order for the 3.3.5 API.
+- All numeric width calls in Mangosbot now use UIDropDownMenu_SetWidth(frame, width).
+
+WotLK.5 TextColor audit:
+- Replaced remaining direct Button:SetTextColor() usage with safe Button:GetFontString():SetTextColor().
+- Patched 4 remaining button text-color call(s) for Wrath 3.3.5 compatibility.
