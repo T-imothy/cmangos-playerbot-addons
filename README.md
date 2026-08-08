@@ -1,46 +1,50 @@
-# CMaNGOS PlayerBot Addon - Classic
+# CMaNGOS PlayerBot Addon — Classic
 
 PlayerBot / MangosBot addon for **CMaNGOS Classic (WoW 1.12.1)**.
 
-This repository contains the MangosBot addon for CMaNGOS PlayerBots, organized into separate branches for each supported expansion.
+This repository provides the addon files used to interact with the CMaNGOS PlayerBot system from inside the WoW client.
 
-## Expansion Branches
+> **This is the Classic version.**
+>
+> Use the branch selector above for TBC or WotLK.
 
-Use the branch selector at the top of the repository to select the correct version:
+## Versions
 
-- `classic` - World of Warcraft 1.12.1
-- `tbc` - The Burning Crusade 2.4.3
-- `wotlk` - Wrath of the Lich King 3.3.5a
+| Branch | Expansion | Client |
+|---|---|---|
+| `classic` | Vanilla / Classic | 1.12.1 |
+| `tbc` | The Burning Crusade | 2.4.3 |
+| `wotlk` | Wrath of the Lich King | 3.3.5a |
 
 ## Installation
 
-Place the addon files into:
+1. Download the addon from the branch matching your server/client.
+2. Extract the addon.
+3. Place the `Mangosbot` folder into your WoW AddOns directory:
 
-`World of Warcraft\Interface\AddOns\Mangosbot`
+   `World of Warcraft\Interface\AddOns\`
 
-The final structure should look like:
+4. Your addon should end up at:
 
-`Interface\AddOns\Mangosbot\Mangosbot.toc`
+   `World of Warcraft\Interface\AddOns\Mangosbot\`
 
-Restart the client or reload the UI after installation.
+5. Start WoW and make sure **Mangosbot** is enabled in the AddOns menu.
 
-## Bot Roster
+## Using the Addon
 
-Use the `/bot` command in WoW to open the Bot Roster window.
+The addon provides the in-game interface for controlling and interacting with CMaNGOS PlayerBots.
 
-Use the **Login** buttons on the appropriate bot window to bring bots online.
+Use:
 
-![Bot Roster](screenshots/bot_roster.png)
+`/bot`
 
-## Bot Controls
+to open the PlayerBot interface.
 
-Select a bot to open the Bot Controls window. The interface provides buttons for commonly used PlayerBot actions.
-
-![Bot Controls](screenshots/bot_controls.png)
+Additional functionality and controls are available directly through the addon UI.
 
 ## Additional Documentation
 
-Additional documentation included with the addon:
+This branch also contains additional documentation for the included PlayerBot UI features:
 
 - `CMANGOS-BOT-ENHANCED-README.txt`
 - `CMANGOS-BOT-MANAGER-README.txt`
@@ -48,8 +52,8 @@ Additional documentation included with the addon:
 
 ## Credits
 
-The original MangosBot / PlayerBot addon and PlayerBot system originate from the CMaNGOS PlayerBots project and its contributors.
+The original PlayerBot / MangosBot project and addon were developed by the CMaNGOS PlayerBots project and its contributors.
 
-This repository is provided as a convenient location for accessing the addon versions for Classic, TBC, and WotLK.
+This repository is maintained as a convenient way to provide the addon files for the supported CMaNGOS expansions.
 
-This repository is not the official CMaNGOS repository.
+This is **not an official CMaNGOS repository**.
