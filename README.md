@@ -48,7 +48,7 @@ This branch also contains additional documentation for the included PlayerBot UI
 
 - `CMANGOS-BOT-ENHANCED-README.txt`
 - `CMANGOS-BOT-MANAGER-README.txt`
-- `MANTECH-README.txt`
+- `Addon-Changes.txt`
 
 ## Credits
 
