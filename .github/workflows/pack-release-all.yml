@@ -1,0 +1,71 @@
+name: Release all branches
+
+# use manual run
+#on:
+#  [workflow_dispatch]
+  
+# on push
+on:
+  push:
+
+env:
+  BRANCH_VANILLA: "1.12"
+  BRANCH_TBC:     "2.4.3"
+  BRANCH_WOTLK:   "3.3.5a"
+  BRANCH_CLASSIC: "1.14/2.5.2"
+  ARCHIVE_PREFIX: "addon-"
+  ARCHIVE_SUFFIX: ".zip"
+  WORK_FOLDER: "${{github.workspace}}\\WorkFolder"
+  
+jobs:
+  release:
+    runs-on: windows-2022
+    permissions:
+      contents: write
+      
+    steps:
+      - name: Checkout vanilla
+        uses: actions/checkout@v2
+        with:
+          ref: ${{env.BRANCH_VANILLA}}
+          path: "${{env.BRANCH_VANILLA}}/Mangosbot"
+          
+      - name: Checkout tbc
+        uses: actions/checkout@v2
+        with:
+          ref: ${{env.BRANCH_TBC}}
+          path: "${{env.BRANCH_TBC}}/Mangosbot"
+          
+      - name: Checkout wotlk
+        uses: actions/checkout@v2
+        with:
+          ref: ${{env.BRANCH_WOTLK}}
+          path: "${{env.BRANCH_WOTLK}}/Mangosbot"
+          
+      - name: Checkout classic
+        uses: actions/checkout@v2
+        with:
+          ref: ${{env.BRANCH_CLASSIC}}
+          path: "1.14-2.5.2/Mangosbot"
+          
+      - name: Prepare archives
+        run: |
+          md -Force "${{github.workspace}}\releases"
+          7z a -tzip "${{github.workspace}}\releases\${{env.ARCHIVE_PREFIX}}${{env.BRANCH_VANILLA}}${{env.ARCHIVE_SUFFIX}}" "${{github.workspace}}/${{env.BRANCH_VANILLA}}/Mangosbot"
+          7z a -tzip "${{github.workspace}}\releases\${{env.ARCHIVE_PREFIX}}${{env.BRANCH_TBC}}${{env.ARCHIVE_SUFFIX}}" "${{github.workspace}}/${{env.BRANCH_TBC}}/Mangosbot"
+          7z a -tzip "${{github.workspace}}\releases\${{env.ARCHIVE_PREFIX}}${{env.BRANCH_WOTLK}}${{env.ARCHIVE_SUFFIX}}" "${{github.workspace}}/${{env.BRANCH_WOTLK}}/Mangosbot"
+          7z a -tzip "${{github.workspace}}\releases\${{env.ARCHIVE_PREFIX}}1.14-2.5.2${{env.ARCHIVE_SUFFIX}}" "${{github.workspace}}/1.14-2.5.2/Mangosbot"
+          
+      - name: Get current date
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+          
+      - name: Upload release
+        uses: svenstaro/upload-release-action@latest
+        with:
+          release_name: "Release (${{ steps.date.outputs.date }})"
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          tag: latest
+          file_glob: true
+          file: releases/*.zip
+          overwrite: true

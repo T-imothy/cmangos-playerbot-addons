@@ -1,0 +1,10 @@
+## Interface: 11200
+## Title: CMaNGOS Bot Manager
+## Author: Designed by Tim
+## Notes: CMaNGOS Classic PlayerBot manager with safe per-bot Character/Gear tools, interactive Help, Advanced Command Center, and Bot Bar
+## DefaultState: Enabled
+## LoadOnDemand: 0
+## SavedVariables: frameopts, mangosbot_options
+## Version: 8.6.10
+Mangosbot_Localization.en.lua
+Mangosbot.lua
