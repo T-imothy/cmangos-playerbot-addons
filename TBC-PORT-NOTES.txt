@@ -1,0 +1,17 @@
+CMaNGOS BOT MANAGER - TBC PORT
+Version 8.6.10-TBC.2
+
+This build ports the current Classic v8.6.10 UI/features onto the existing
+CMaNGOS TBC addon base behavior.
+
+Important compatibility choice:
+- The TBC bot command transport keeps the existing TBC SendAddonMessage path.
+- The Vanilla-only 1.12 WHISPER transport workaround was NOT carried into TBC.
+- Character maintenance actions retain the working per-bot whisper command
+  pattern introduced in the current Classic build.
+
+This is the first TBC parity test build. UI/features are intended to match the
+Classic build, but individual CMaNGOS TBC PlayerBot command support should be
+validated in-game before treating every command as confirmed.
+
+TBC-specific Help now documents native Eye of the Storm and Arena PlayerBot behavior.

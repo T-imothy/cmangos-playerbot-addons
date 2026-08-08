@@ -1,0 +1,10 @@
+## Interface: 20400
+## Title: CMaNGOS Bot Manager - TBC
+## Author: Designed by Tim
+## Notes: CMaNGOS TBC PlayerBot manager with per-bot Character tools, interactive Help, Advanced Command Center, Bot Bar, and live party/raid class controls
+## DefaultState: Enabled
+## LoadOnDemand: 0
+## SavedVariables: frameopts, mangosbot_options
+## Version: 8.6.10-TBC.2
+Mangosbot_Localization.en.lua
+Mangosbot.lua
